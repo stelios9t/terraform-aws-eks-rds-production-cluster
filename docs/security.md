@@ -1,6 +1,6 @@
 # Security Configuration
 
-## IAM and AWS RBAC
+## AWS IAM
 
 The EKS module enables IRSA (IAM Roles for Service Accounts):
 

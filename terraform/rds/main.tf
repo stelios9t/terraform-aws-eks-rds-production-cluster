@@ -34,7 +34,7 @@ resource "aws_security_group" "rds_sg" {
 resource "aws_db_instance" "postgres" {
   identifier              = "portfolio-postgres"
   engine                  = "postgres"
-  engine_version          = "15.3"
+  engine_version          = "15.7"
   instance_class          = "db.t3.micro"  
   allocated_storage       = 20
   storage_type            = "gp3"
@@ -45,7 +45,7 @@ resource "aws_db_instance" "postgres" {
   username                = var.db_username
   password                = var.db_password
   backup_retention_period = 7
-  skip_final_snapshot     = false
+  skip_final_snapshot     = true
   deletion_protection     = false # for project purposes
 
   db_name                 = var.db_name

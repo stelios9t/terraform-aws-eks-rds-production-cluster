@@ -9,3 +9,12 @@ variable "vpc_cidr" {
 #/16 gives thousands of ips
 #/16 = first 16 bits are fixed (10.0), rest are allocatable (0.0)
 
+variable "vpc_id" {
+  type        = string
+  description = "VPC ID where EKS is deployed"
+}
+
+variable "subnet_ids" {
+  type        = list(string)
+  description = "Subnets for worker nodes"
+}

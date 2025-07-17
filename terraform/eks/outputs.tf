@@ -1,19 +1,17 @@
 output "cluster_name" {
-  value = module.eks.cluster_id
+  value = module.eks.cluster_name
 }
 
 output "cluster_endpoint" {
   value = module.eks.cluster_endpoint
 }
 
-output "vpc_id" {
-  value = module.eks.vpc_id
+output "cluster_certificate_authority_data" {
+  value = module.eks.cluster_certificate_authority_data
 }
 
-output "private_subnets" {
-  value = module.eks.private_subnets
+output "eks_node_security_group_id" {
+  value = module.eks.node_security_group_id
 }
 
-output "worker_node_sg" {
-  value = module.eks.node_groups["default"].security_group_id
-}
+

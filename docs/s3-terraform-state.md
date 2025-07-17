@@ -10,6 +10,7 @@ Below commands configure resources needed for S3 state locking using AWS CLI
 aws s3api create-bucket \
   --bucket eks-rds-project-bucket \
   --region eu-central-1
+  --create-bucket-configuration LocationConstraint=eu-central-1
 ```
 
 > To create S3 bucket
