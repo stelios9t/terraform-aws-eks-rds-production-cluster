@@ -29,7 +29,7 @@ multi_az = true
 
 ```hcl
 deletion_protection = true
-````
+```
 
 ## Backup
 
@@ -38,3 +38,8 @@ deletion_protection = true
 ```hcl
 backup_retention_period = 7
 ```
+
+![rds-architecture](assets/rds-architecture.png)
+
+See [terraform/rds](terraform/rds) for more details
+````
