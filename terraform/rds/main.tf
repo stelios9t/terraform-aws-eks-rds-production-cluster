@@ -14,9 +14,9 @@ resource "aws_db_instance" "postgres" {
   instance_class          = "db.t3.micro"  
   allocated_storage       = 20
   storage_type            = "gp3"
-  multi_az                = true  # Enables automatic failover
+  multi_az                = true  # failover
   db_subnet_group_name    = aws_db_subnet_group.postgres_subnet_group.name
-  vpc_security_group_ids  = [] # optional, can be set later
+  vpc_security_group_ids  = [] 
   publicly_accessible     = false
   username                = var.db_username
   password                = var.db_password
@@ -26,9 +26,4 @@ resource "aws_db_instance" "postgres" {
 
   db_name                 = var.db_name
 
-  tags = {
-    Name        = "portfolio-postgres"
-    Environment = "dev"
-    Project     = "terraform-eks-rds"
-  }
 }
