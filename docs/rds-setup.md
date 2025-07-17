@@ -19,7 +19,7 @@ The RDS instance is deployed in **private subnets**, isolated from the internet.
 
 - Set up by the below field to enable automatic failover to another Availability Zone in case of failure
 
-````hcl
+```hcl
 multi_az = true
 ```
 
@@ -42,4 +42,3 @@ backup_retention_period = 7
 ![rds-architecture](assets/rds-architecture.png)
 
 See [terraform/rds](terraform/rds) for more details
-````
