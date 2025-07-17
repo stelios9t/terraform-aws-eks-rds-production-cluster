@@ -1,6 +1,6 @@
-# data "aws_secretsmanager_secret_version" "db_password" {
-#   secret_id = "rds-db-password"
-# }
+data "aws_secretsmanager_secret_version" "db_password" {
+  secret_id = "rds-db-password"
+}
 #Fetches data from secrets manager
 
 module "eks" {
@@ -15,7 +15,7 @@ module "rds" {
   vpc_id     =      module.vpc.vpc_id
   vpc_cidr         = var.vpc_cidr
   private_subnets  = module.vpc.private_subnets
-  db_password      = "dummy111!!!!"
+  db_password      = data.aws_secretsmanager_secret_version.db_password.secret_string
   eks_node_sg_id = module.eks.eks_node_security_group_id
 }
 
