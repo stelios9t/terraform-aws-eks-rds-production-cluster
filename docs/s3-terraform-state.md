@@ -1,4 +1,8 @@
-# Terrafom State locked in S3 bucket with DynamoDB lock
+# Terrafom S3 Backend Setup
+
+This project uses an **S3 backend** with **DynamoDB locking** to store and manage Terraform state securely and safely.
+
+## Configuration
 
 Below commands configure resources needed for S3 state locking using AWS CLI
 
@@ -27,3 +31,19 @@ aws dynamodb create-table \
 ```
 
 > Creates DynamoDB table for state locking so that only one person can write to terraform state at the same time
+
+## TF Usage
+
+State is referenced in each module's backend.tf
+
+- [eks-backend](../terraform/eks/backend.tf)
+- [rds-backend](../terraform/rds/backend.tf)
+
+## Modular State Setup
+
+- Enables modularization and operation of infrastructure
+- Manage EKS and RDS independently
+- Easier to reuse or destroy only the RDS component without affecting EKS
+- Separation is defined by a different key value pair to store the state in
+
+![s3-state](assets/s3-state.png)

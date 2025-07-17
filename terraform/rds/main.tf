@@ -46,7 +46,7 @@ resource "aws_db_instance" "postgres" {
   password                = var.db_password
   backup_retention_period = 7
   skip_final_snapshot     = false
-  deletion_protection     = false
+  deletion_protection     = false # for project purposes
 
   db_name                 = var.db_name
 

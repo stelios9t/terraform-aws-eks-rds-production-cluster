@@ -9,3 +9,11 @@ aws secretsmanager create-secret \
 ```
 
 > Creates secret resource
+
+Secret is fetched in root level [main.tf](../terraform/main.tf):
+
+```hcl
+data "aws_secretsmanager_secret_version" "db_password" {
+  secret_id = "rds-db-password"
+}
+```
