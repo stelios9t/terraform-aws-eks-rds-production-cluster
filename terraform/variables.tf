@@ -13,3 +13,8 @@ variable "vpc_cidr" {
   default     = "10.0.0.0/16"
   description = "CIDR block for the VPC"
 }
+
+variable "vpc_cidr" {
+  description = "CIDR block of the VPC"
+  type        = string
+}

@@ -1,5 +1,5 @@
 variable "vpc_id" {
-  description = "VPC where RDS will be deployed"
+  description = "VPC for RDS"
   type        = string
 }
 
@@ -22,4 +22,11 @@ variable "db_password" {
 variable "db_name" {
   default     = "portfolio_db"
   description = "Initial database name"
+}
+
+variable "vpc_cidr" {}
+
+variable "eks_node_sg_id" {
+  type        = string
+  description = "Security group ID of EKS worker nodes"
 }

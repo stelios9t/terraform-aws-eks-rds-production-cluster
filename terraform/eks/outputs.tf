@@ -13,3 +13,7 @@ output "vpc_id" {
 output "private_subnets" {
   value = module.eks.private_subnets
 }
+
+output "worker_node_sg" {
+  value = module.eks.node_groups["default"].security_group_id
+}
