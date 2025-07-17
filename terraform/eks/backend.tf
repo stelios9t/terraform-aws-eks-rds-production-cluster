@@ -1,8 +1,8 @@
 terraform {
   backend "s3" {
-    bucket         = "your-unique-bucket-name"
+    bucket         = "eks-rds-project-bucket"
     key            = "eks/terraform.tfstate"
-    region         = "us-east-1"
+    region         = "eu-central-1"
     dynamodb_table = "terraform-lock-table"
     encrypt        = true
   }
